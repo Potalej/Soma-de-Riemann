@@ -2,9 +2,11 @@
 
 O cálculo de integrais definidas através de aproximações com somas de Riemann é dado, de forma geral, pelo seguinte limite:
 
-![formula](https://latex.codecogs.com/png.latex?%5Cbg_white%20%5Cint_a%5Ebf%28x%29dx%3D%5Clim_%7B%5Cmax%5CDelta%20x_i%20%5Crightarrow%200%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7Df%28x_i%29%5CDelta%20x_i)
+$$
+  \int_a^b f(x)dx = \lim_{max \Delta x_i \rightarrow 0} \sum_{i=1}^n f(x_i) \Delta x_i
+$$
 
-Onde o ![formula](https://latex.codecogs.com/png.latex?%5Cbg_white%20%5CDelta%20x_i%20%3D%20x_i%20-%20x_%7Bi-1%7D). Ou seja, se a maior diferença tender a zero, a aproximação será boa. Tratando de forma computacional, a diferença nunca será nula, mas pode se aproximar conforme o tamanho de n. Assim, pode-se entrar com uma função, um intervalo e a quantidade de partições que se deseja usar:
+Onde $\Delta x_i = x_i - x_{i-1}$. Ou seja, se a maior diferença tender a zero, a aproximação será boa. Tratando de forma computacional, a diferença nunca será nula, mas pode se aproximar conforme o tamanho de n. Assim, pode-se entrar com uma função, um intervalo e a quantidade de partições que se deseja usar:
 
 ```python
 intervalo = [-1, 1]
@@ -17,7 +19,9 @@ print(integral)
 
 Neste caso, se utilizará 250 partições, a função x² e x estará compreendido entre os valores de -1 e 1. Calculando-se a integral definida usando métodos de integração, se tem:
 
-![formula](https://latex.codecogs.com/png.latex?%5Cbg_white%20%5Cint_%7B-1%7D%5E%7B1%7Dx%5E2dx%3D%5Cdfrac%7Bx%5E3%7D%7B3%7D%7C_%7B-1%7D%5E1%3D%5Cdfrac%7B1%5E3%7D%7B3%7D-%5Cdfrac%7B%28-1%29%5E3%7D%7B3%7D%3D%5Cdfrac%7B2%7D%7B3%7D%5Capprox%200.66667)
+$$
+\int_{-1}^{1} x^2 dx = \dfrac{x^3}{3}|_{-1}^{1} = \dfrac{1^3}{3}-\dfrac{(-1)^3}{3} = \dfrac{2}{3} \approx 0.66667
+$$
 
 Já nas condições dadas, o programa retorna:
 ```terminal
